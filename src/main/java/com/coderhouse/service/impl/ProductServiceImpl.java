@@ -20,7 +20,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductResponse create(ProductRequest request) {
-        var entity = productFactory.createProduct(request.getType(), request);
+        var entity =
+                productFactory.createProduct(request);
         var entitySaved = repository.save(entity);
         return ProductBuilder.entityToResponseCreate(entitySaved);
     }

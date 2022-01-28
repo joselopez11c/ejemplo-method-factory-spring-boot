@@ -35,7 +35,6 @@ public class ProductBuilder {
                 .status(Boolean.TRUE)
                 .createDate(LocalDateTime.now())
                 .description(request.getDescription())
-//                .serviceTime(request.getServiceTime())
                 .build();
     }
 
@@ -82,9 +81,12 @@ public class ProductBuilder {
         return CategoryResponse.builder().description(category.getDescription()).build();
     }
 
-    public static <T extends ProductDocument> List<ProductResponse> listEntityToResponse(List<T> products) {
+    public static List<ProductResponse>
+    listEntityToResponse(List<ProductDocument> products) {
+
         var listResponse = new ArrayList<ProductResponse>();
         products.forEach(item -> listResponse.add(entityToResponse(item)));
         return listResponse;
     }
+
 }

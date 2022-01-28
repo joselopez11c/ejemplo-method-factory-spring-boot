@@ -13,4 +13,5 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder(toBuilder = true)
 @EqualsAndHashCode(callSuper = true)
 public class ProductTangible extends ProductDocument {
+
 }
