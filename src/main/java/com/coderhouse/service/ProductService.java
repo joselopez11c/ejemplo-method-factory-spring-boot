@@ -8,5 +8,6 @@ import java.util.List;
 public interface ProductService {
 
     ProductResponse create(ProductRequest request);
+    ProductResponse update(String id, ProductRequest request);
     List<ProductResponse> searchAll();
 }

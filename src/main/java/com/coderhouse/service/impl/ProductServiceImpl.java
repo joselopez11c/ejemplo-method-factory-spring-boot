@@ -27,6 +27,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductResponse update(String id, ProductRequest request) {
+        var entity =
+                productFactory.createProduct(request);
+        entity.setId(id);
+        var entitySaved = repository.save(entity);
+        return ProductBuilder.entityToResponseCreate(entitySaved);
+    }
+
+    @Override
     public List<ProductResponse> searchAll() {
         return ProductBuilder.listEntityToResponse(repository.findAll());
     }

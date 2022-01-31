@@ -22,6 +22,12 @@ public class ProductController {
         return service.create(product);
     }
 
+    @PutMapping("/product/{id}")
+    public ProductResponse updateProduct(@PathVariable String id,
+            @Validated @RequestBody ProductRequest product) {
+        return service.update(id, product);
+    }
+
     @GetMapping("/product/all")
     public List<ProductResponse> searchProduct() {
         return service.searchAll();
