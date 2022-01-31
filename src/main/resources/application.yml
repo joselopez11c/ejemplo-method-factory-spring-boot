@@ -1,7 +1,6 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/coderhouse
-      database: coderhouse
-server:
-  port: 8080
+      datbase: coderhouse
+      host: mongo-coderhouse
+      port: 27017
